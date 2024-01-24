@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/studio.svg";
+import menu from "../assets/menu.svg";
 import search from "../assets/search.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "./AuthContext";
@@ -10,7 +11,7 @@ const Navbar = () => {
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
   // console.log(user)
-useParams()
+  useParams();
 
   const handleLogout = async () => {
     try {
@@ -22,23 +23,44 @@ useParams()
   };
 
   return (
-    <div className="z-[100] sticky top-0 bg-black flex items-center justify-between py-3 font-roboto">
-      {/* Logo */}
-      <Link to="/" className="">
-        <img src={logo} alt="" className="mx-6 w-24" />
-      </Link>
+    <div className="font-roboto sticky top-0 z-[100] flex items-center justify-between bg-[#282828] ">
+
+      {/* Menu */}
+      <div className="flex items-center mx-3 sm:mx-5">
+        <svg
+          width="64"
+          className="w-7 text-[#909090]"
+          height="64"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 8h24M4 16h24M4 24h24"
+          />
+        </svg>
+
+        {/* Logo */}
+        <Link to="/" className="">
+          <img src={logo} alt="" className="ml-4 w-24 sm:ml-6" />
+        </Link>
+      </div>
       {/* Search Bar */}
-      <div className="mx-3 flex shrink rounded-full  bg-[#222222] text-white ring-1 ring-[#383838] sm:w-[50%] ">
-        <input
-          type="text"
-          placeholder="Search"
-          className="  laceholder:text-neutral-400 w-full rounded-l-full bg-[#000000] py-[0.4rem]   pl-5"
-        />
+      <div className="mx-3 flex shrink rounded-md  bg-[#262626] text-white ring-1 ring-[#383838] sm:w-[50%] ">
         <img
           src={search}
           alt=""
-          className="pointer-events-none mx-2 w-7 sm:mx-4 sm:w-8"
-        />
+          className="pointer-events-none mx-2 w-7 sm:mx-2 "
+        />{" "}
+        <input
+          type="text"
+          placeholder="Search"
+          className="   w-full rounded-md bg-[#262626] py-[0.4rem] pl-3   placeholder:text-zinc-500"
+        ></input>
       </div>
 
       {/* Log In & Sign in */}
@@ -49,7 +71,7 @@ useParams()
           </button>
           <button
             onClick={handleLogout}
-            className="flex cursor-pointer items-center justify-center rounded-full border border-[#37a6ff] bg-[#0d141c] px-3 py-2 text-[#37a6ff]"
+            className="flex cursor-pointer items-center justify-center rounded-full border border-[#37a6ff] bg-[#272727] px-3 py-2 text-[#37a6ff]"
           >
             Logout
           </button>
@@ -60,7 +82,7 @@ useParams()
           <button className="pr-4 text-white">Sign In</button>{" "}
         </Link> */}
           <Link to="/signup">
-            <button className=" flex cursor-pointer items-center justify-center rounded-full border border-[#37a6ff] bg-[#0d141c] px-3 py-2 text-[#37a6ff] hover:bg-[#263850]">
+            <button className=" flex cursor-pointer items-center justify-center rounded-full border border-[#37a6ff] bg-[#272727] px-3 py-2 text-[#37a6ff] hover:bg-[#263850]">
               <img src={person} alt="" className="w-5 " />
               <p className="pl-1.5 text-sm">Sign Up</p>
             </button>
