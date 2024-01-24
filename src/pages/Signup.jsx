@@ -33,7 +33,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="h-full w-full ">
+      <div className=" w-full ">
         <img
           src={login_bg}
           alt="/"

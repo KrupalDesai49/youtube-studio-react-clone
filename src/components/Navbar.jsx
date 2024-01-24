@@ -7,7 +7,7 @@ import { UserAuth } from "./AuthContext";
 import person from "../assets/person.svg";
 import { useParams } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({setOpen}) => {
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
   // console.log(user)
@@ -23,13 +23,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className="font-roboto sticky top-0 z-[100] flex items-center justify-between bg-[#282828] ">
-
+    <div className="font-roboto sticky top-0 z-[100] flex items-center justify-between bg-[#282828] shadow-lg ">
       {/* Menu */}
-      <div className="flex items-center mx-3 sm:mx-5">
+      <div className="mx-3 flex items-center sm:mx-5">
+
+        <div className="px-2 cursor-pointer" onClick={()=>setOpen(e=>e=!e)}>
         <svg
           width="64"
-          className="w-7 text-[#909090]"
+          className="w-7 text-[#909090] hover:text-white"
           height="64"
           viewBox="0 0 32 32"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,12 +38,13 @@ const Navbar = () => {
           <path
             fill="none"
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M4 8h24M4 16h24M4 24h24"
           />
         </svg>
+        </div>
 
         {/* Logo */}
         <Link to="/" className="">
@@ -51,24 +53,42 @@ const Navbar = () => {
       </div>
       {/* Search Bar */}
       <div className="mx-3 flex shrink rounded-md  bg-[#262626] text-white ring-1 ring-[#383838] sm:w-[50%] ">
-        <img
-          src={search}
-          alt=""
-          className="pointer-events-none mx-2 w-7 sm:mx-2 "
-        />{" "}
+
+        <svg
+          className=" mx-2 w-7 text-[#909090] sm:mx-2 hover:text-white cursor-pointer "
+          viewBox="0 0 50 50"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13m0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11"
+          />
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z"
+          />
+        </svg>
         <input
           type="text"
           placeholder="Search"
-          className="   w-full rounded-md bg-[#262626] py-[0.4rem] pl-3   placeholder:text-zinc-500"
+          className="   w-full focus:outline-none rounded-md bg-[#262626] py-[0.4rem] pl-3   placeholder:text-zinc-500"
         ></input>
       </div>
 
       {/* Log In & Sign in */}
       {user?.email ? (
         <div className="flex shrink-0 items-center pr-3">
+          <div className=" mr-3 h-10 w-10  flex flex-col items-center justify-center">
+        {user.photoURL ? (
+          <img src={user ? user.photoURL : null} alt="" className="rounded-full" />
+        ) : (
           <button className="mr-3 h-10 w-10 rounded-full bg-[#ff0000] text-xl font-[500] text-white hover:bg-[#ff0000]/90">
             {user.displayName.charAt(0).toUpperCase()}
           </button>
+        )}
+      </div>
           <button
             onClick={handleLogout}
             className="flex cursor-pointer items-center justify-center rounded-full border border-[#37a6ff] bg-[#272727] px-3 py-2 text-[#37a6ff]"
