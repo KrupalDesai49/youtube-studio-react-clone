@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    // Main Container
+    <div className="">
+      {/* Container */}
+      <div className=" flex flex-col mt-5 ml-5">
 
-export default Home
+{/* Heading */}
+        <h1 className="text-2xl font-[500]">Channel dashboard</h1>
+
+{/*  */}
+
+      </div>
+    </div>
+  );
+};
+
+export default Home;

@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "./AuthContext";
 import person from "../assets/person.svg";
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Navbar = ({setOpen}) => {
   const { user, logOut } = UserAuth();
@@ -22,8 +23,23 @@ const Navbar = ({setOpen}) => {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+       if (window.innerWidth > 500) {
+        setOpen(true);
+       } else {
+        setOpen(false);
+       }
+    };
+   
+    return () => {    handleResize();
+
+    };
+   }, []); 
+
+
   return (
-    <div className="font-roboto sticky top-0 z-[100] flex items-center justify-between bg-[#282828] shadow-lg ">
+    <div className={`font-roboto  sticky top-0 z-[100] flex items-center justify-between bg-[#282828] shadow-lg `}>
       {/* Menu */}
       <div className="mx-3 flex items-center sm:mx-5">
 

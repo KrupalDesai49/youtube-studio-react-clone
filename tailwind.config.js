@@ -4,11 +4,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],  theme: {
-    extend: {},
-  },
-  variants: {
-    fill: ['hover', 'focus'], // this line does the trick
- },
+    fontFamily: {
+      roboto: ['Roboto', 'sans-serif'],
+
+    }  },
+
   plugins: [],
 }
 
