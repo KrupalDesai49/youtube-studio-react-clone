@@ -1,17 +1,87 @@
 import React from "react";
+import content_img from "../assets/no_content_illustration_upload_video_v3_darkmode.svg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     // Main Container
-    <div className="">
+    <div className="w-full">
       {/* Container */}
-      <div className=" flex flex-col mt-5 ml-5">
-
-{/* Heading */}
+      <div className=" mx-5 mt-5 flex flex-col">
+        {/* Heading */}
         <h1 className="text-2xl font-[500]">Channel dashboard</h1>
 
-{/*  */}
+        {/* Container of Upload & viewer */}
+        <div className="flex w-full flex-col-reverse items-center  justify-center md:justify-start md:items-start py-5 md:flex-row md:space-x-7">
+          {/* Video Upload Container*/}
+          <div className="mt-7 md:mt-0 rounded-md border border-[#3e3e3e] bg-[#282828]">
+            <div className="m-2 flex h-[25rem] flex-col items-center justify-center rounded-md border border-dashed border-[#3e3e3e] bg-[#282828] px-3">
+              {/* Image */}
+              <img src={content_img} alt="img" className="-mt-7 w-36" />
 
+              {/* Text */}
+              <p className="text-sm text-[#aaaaaa]">
+                Want to see metrics on your recent video?
+              </p>
+              <p className="text-sm text-[#aaaaaa]">
+                Upload and publish a video to get started.
+              </p>
+
+              {/* Upload Button */}
+              <Link
+                to="/upload"
+                className="mt-5 rounded-sm bg-[#3ea6ff] px-4 py-2 text-sm font-[500] uppercase text-[#0d0d0d]"
+              >
+                Upload videos
+              </Link>
+            </div>
+          </div>
+
+          {/* Video Details Container */}
+          <div className="flex min-w-72 flex-col  justify-center rounded-md border border-[#3e3e3e] bg-[#282828] px-5 py-5">
+            <p className="text-lg font-[500]"> Channel analytics</p>
+
+            {/* Subscribe Text  */}
+            <p className="-ml-3 mt-3 scale-90 text-sm">Current subscribers</p>
+            <p className="text-4xl">165</p>
+
+            {/* Views & Likes Container */}
+            <div className="mt-16 w-full border-t border-[#3e3e3e]">
+              <p className="mt-3 font-[500]">Summary</p>
+              <p className="text-xs text-[#909090]">
+                {" "}
+                Channel Created 3 Days ago
+              </p>
+              
+{/* Videos */}
+              <div className="mt-3 flex justify-between text-sm">
+                <p className="">Videos</p>
+                <div className="flex">
+                  <p className="">0</p>
+                  <p className="ml-3">—</p>
+                </div>
+              </div>
+
+{/* Views */}
+              <div className="mt-3 flex justify-between text-sm">
+                <p className="">Views</p>
+                <div className="flex">
+                  <p className="">0</p>
+                  <p className="ml-3">—</p>
+                </div>
+              </div>
+
+{/* Commnents */}
+              <div className="mt-3 flex justify-between text-sm">
+                <p className="">Comments</p>
+                <div className="flex">
+                  <p className="">0</p>
+                  <p className="ml-3">—</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
