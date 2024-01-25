@@ -33,16 +33,16 @@ const Signup = () => {
 
   return (
     <>
-      <div className=" w-full ">
+      <div className=" w-full  ">
         <img
           src={login_bg}
           alt="/"
           className="absolute   h-[40%] w-full object-cover "
         />
-        <div className="fixed left-0 top-0 min-h-screen w-full bg-black/65"></div>
+        <div className="fixed left-0 top-0 min-h-screen w-full  bg-black/65"></div>
         <div className=" z-10 w-full px-4 pt-7 ">
-          <div className="h-[460px]  mx-auto  max-w-[450px] rounded-xl bg-black/40 text-white backdrop-blur-md">
-            <div className="flex flex-col mx-auto w-[320px]  py-12 px-5 sm:px-0 ">
+          <div className="  mx-auto  max-w-[450px] rounded-xl bg-black/40 text-white backdrop-blur-md">
+            <div className="flex flex-col mx-auto w-[320px]  pt-12  px-5 sm:px-0 ">
               <h1 className="text-3xl font-bold">Sign Up</h1>
               <form
                 onSubmit={handleSubmit}

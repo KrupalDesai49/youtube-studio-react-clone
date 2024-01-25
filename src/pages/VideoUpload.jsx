@@ -15,6 +15,7 @@ const VideoUpload = () => {
   const getVideoDetails = async (videoId) => {
     try {
       const response = await axios.get(`https://www.youtube.com/watch?v=${videoId}`);
+      console.log("wwdwddw",videoId)
       const html = response.data;
       const $ = cheerio.load(html);
       const title = $('meta[name="title"]').attr('content');

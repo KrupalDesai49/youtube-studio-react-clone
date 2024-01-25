@@ -14,23 +14,23 @@ const Home = () => {
         {/* Container of Upload & viewer */}
         <div className="flex w-full flex-col-reverse items-center  justify-center py-5 md:flex-row md:items-start md:justify-start md:space-x-7">
           {/* Video Upload Container*/}
-          <div className="mt-7 rounded-md border border-[#3e3e3e] bg-[#282828] md:mt-0">
+          <div className="mt-7 shrink rounded-md border border-[#3e3e3e] bg-[#282828] md:mt-0">
             <div className="m-2 flex h-[25rem] flex-col items-center justify-center rounded-md border border-dashed border-[#3e3e3e] bg-[#282828] px-3">
               {/* Image */}
               <img src={content_img} alt="img" className="-mt-7 w-36" />
 
               {/* Text */}
-              <p className="text-sm text-[#aaaaaa]">
+              <p className="text-sm text-center text-[#aaaaaa]">
                 Want to see metrics on your recent video?
               </p>
-              <p className="text-sm text-[#aaaaaa]">
+              <p className="text-sm text-center text-[#aaaaaa]">
                 Upload and publish a video to get started.
               </p>
 
               {/* Upload Button */}
               <Link
                 to="/upload"
-                className="mt-5 rounded-sm bg-[#3ea6ff] px-4 py-2 text-sm font-[500] uppercase text-[#0d0d0d]"
+                className="mt-5 rounded-sm text-center bg-[#3ea6ff] px-4 py-2 text-sm font-[500] uppercase text-[#0d0d0d]"
               >
                 Upload videos
               </Link>
@@ -38,7 +38,7 @@ const Home = () => {
           </div>
 
           {/* Video Details Container */}
-          <div className="flex min-w-72 flex-col  justify-center rounded-md border border-[#3e3e3e] bg-[#282828] px-5 py-5">
+          <div className="flex shrink min-w-72 flex-col  justify-center rounded-md border border-[#3e3e3e] bg-[#282828] px-5 py-5">
             <p className="text-lg font-[500]"> Channel analytics</p>
 
             {/* Subscribe Text  */}

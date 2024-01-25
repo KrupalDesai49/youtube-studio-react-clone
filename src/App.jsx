@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
 import VideoUpload from "./pages/VideoUpload";
+import Content from "./pages/Content";
 function App() {
   const [open, setOpen] = useState(false);
 
@@ -23,6 +24,7 @@ function App() {
               <SideBar open={open} setOpen={setOpen}/>
               <Routes>
                 <Route exact path="/" element={<Home />} />
+                <Route exact path="/content" element={<Content />} />
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/signup" element={<Signup />} />
                 <Route exact path="/upload" element={<VideoUpload />} />

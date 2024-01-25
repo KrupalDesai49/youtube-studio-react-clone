@@ -10,9 +10,9 @@ const SideBar = ({ open,setOpen }) => {
   return (
     // Container
     <div
-      className={`md:sticky z-10   fixed  flex flex-col h-full md:h-auto  bg-neutral-800 ${Ids.pathname == "/signup" || Ids.pathname == "/login" ? "hidden" : null} shadow-lg transition-all duration-200  ${open ? "w-64" : "w-20"} border-r  border-r-neutral-700 `}
+      className={`md:sticky z-10 shrink-0  fixed  flex flex-col h-full md:h-auto  bg-neutral-800 ${Ids.pathname == "/signup" || Ids.pathname == "/login" ? "hidden" : null} shadow-lg transition-all duration-200  ${open ? "w-64" : "w-20"} border-r  border-r-neutral-700 `}
     >
-      <div className={`md:hidden ${open? 'block':"hidden"} transition-all duration-300 absolute w-screen h-full bg-black/40 backdrop-blur-sm -z-10`}
+      <div className={`md:hidden ${open? 'block':"hidden"} transition-all duration-300 absolute w-screen h-full  backdrop-blur-sm -z-10`}
       onClick={()=>{setOpen(false)}}></div>
       {/* User's Logo */}
       <div className="flex flex-col items-center justify-center py-3">

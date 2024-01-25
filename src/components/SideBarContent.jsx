@@ -7,6 +7,7 @@ import content_fill from "../assets/content_fill.svg";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SideBarContent = ({ open }) => {
   const [selectedStatus, setSelectedStatus] = useState("p1");
@@ -19,7 +20,8 @@ const SideBarContent = ({ open }) => {
     <div>
       <div className={`   flex  flex-1  flex-col text-white `}>
         {/* Item 1 */}
-        <div
+        <Link 
+        to='/'
           id="p1"
           onClick={() => handleRadioChange("p1")}
           className={` relative flex items-center border-l-4 py-3 transition-all duration-200 hover:bg-[#1f1f1f]    ${selectedStatus === "p1" ? "border-[#ff4e45] bg-[#1f1f1f]" : "border-[#282828] hover:border-[#1f1f1f]"}`}
@@ -44,10 +46,11 @@ const SideBarContent = ({ open }) => {
           >
             Dashboard
           </p>
-        </div>
+        </Link>
 
         {/* Item 2 */}
-        <div
+        <Link
+        to='/content'
           id="p2"
           onClick={() => handleRadioChange("p2")}
           className={`relative flex items-center border-l-4 py-3 transition-all duration-200 hover:bg-[#1f1f1f]     ${selectedStatus === "p2" ? "border-[#ff4e45] bg-[#1f1f1f]" : "border-[#282828] hover:border-[#1f1f1f]"}`}
@@ -72,7 +75,7 @@ const SideBarContent = ({ open }) => {
           >
             Content
           </p>
-        </div>
+        </Link>
       </div>
     </div>
   );
