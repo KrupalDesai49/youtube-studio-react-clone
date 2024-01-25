@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     // Main Container
-    <div className="w-full">
+    <div className="w-full ml-20 md:ml-0">
       {/* Container */}
       <div className=" mx-5 mt-5 flex flex-col">
         {/* Heading */}
-        <h1 className="text-2xl font-[500]">Channel dashboard</h1>
+        <h1 className="text-2xl font-[500] ">Channel dashboard</h1>
 
         {/* Container of Upload & viewer */}
-        <div className="flex w-full flex-col-reverse items-center  justify-center md:justify-start md:items-start py-5 md:flex-row md:space-x-7">
+        <div className="flex w-full flex-col-reverse items-center  justify-center py-5 md:flex-row md:items-start md:justify-start md:space-x-7">
           {/* Video Upload Container*/}
-          <div className="mt-7 md:mt-0 rounded-md border border-[#3e3e3e] bg-[#282828]">
+          <div className="mt-7 rounded-md border border-[#3e3e3e] bg-[#282828] md:mt-0">
             <div className="m-2 flex h-[25rem] flex-col items-center justify-center rounded-md border border-dashed border-[#3e3e3e] bg-[#282828] px-3">
               {/* Image */}
               <img src={content_img} alt="img" className="-mt-7 w-36" />
@@ -52,8 +52,8 @@ const Home = () => {
                 {" "}
                 Channel Created 3 Days ago
               </p>
-              
-{/* Videos */}
+
+              {/* Videos */}
               <div className="mt-3 flex justify-between text-sm">
                 <p className="">Videos</p>
                 <div className="flex">
@@ -62,7 +62,7 @@ const Home = () => {
                 </div>
               </div>
 
-{/* Views */}
+              {/* Views */}
               <div className="mt-3 flex justify-between text-sm">
                 <p className="">Views</p>
                 <div className="flex">
@@ -71,7 +71,7 @@ const Home = () => {
                 </div>
               </div>
 
-{/* Commnents */}
+              {/* Commnents */}
               <div className="mt-3 flex justify-between text-sm">
                 <p className="">Comments</p>
                 <div className="flex">

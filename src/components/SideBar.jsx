@@ -3,15 +3,17 @@ import SideBarContent from "./SideBarContent";
 import { UserAuth } from "./AuthContext";
 import { useLocation } from "react-router-dom";
 
-const SideBar = ({ open }) => {
+const SideBar = ({ open,setOpen }) => {
   const { user } = UserAuth();
   let Ids = useLocation();
 
   return (
     // Container
     <div
-      className={`sticky flex flex-col  bg-neutral-800 ${Ids.pathname == "/signup" || Ids.pathname == "/login" ? "hidden" : null} shadow-lg transition-all duration-200  ${open ? "w-64" : "w-20"} border-r  border-r-neutral-700 `}
+      className={`md:sticky z-10   fixed  flex flex-col h-full md:h-auto  bg-neutral-800 ${Ids.pathname == "/signup" || Ids.pathname == "/login" ? "hidden" : null} shadow-lg transition-all duration-200  ${open ? "w-64" : "w-20"} border-r  border-r-neutral-700 `}
     >
+      <div className={`md:hidden ${open? 'block':"hidden"} transition-all duration-300 absolute w-screen h-full bg-black/40 backdrop-blur-sm -z-10`}
+      onClick={()=>{setOpen(false)}}></div>
       {/* User's Logo */}
       <div className="flex flex-col items-center justify-center py-3">
         {user?.displayName &&

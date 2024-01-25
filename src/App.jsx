@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Signup from "./pages/Signup";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
+import VideoUpload from "./pages/VideoUpload";
 function App() {
   const [open, setOpen] = useState(false);
 
@@ -18,12 +19,13 @@ function App() {
         <Router>
           <div className=" flex min-h-screen flex-col text-white font-roboto bg-[#1f1f1f]">
             <Navbar setOpen={setOpen} />
-            <div className="flex flex-1">
-              <SideBar open={open} />
+            <div className="flex relative flex-1">
+              <SideBar open={open} setOpen={setOpen}/>
               <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/signup" element={<Signup />} />
+                <Route exact path="/upload" element={<VideoUpload />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>

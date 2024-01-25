@@ -32,9 +32,8 @@ const Navbar = ({setOpen}) => {
        }
     };
    
-    return () => {    handleResize();
-
-    };
+    return () => {    handleResize();    };
+    
    }, []); 
 
 
